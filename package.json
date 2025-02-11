@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "name": "sequelize-exercice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "create-db": "npx sequelize-cli db:create",
+    "drop-db": "npx sequelize-cli db:drop"
+  },
+  "keywords": [],
+  "author": "Chermann KING",
+  "license": "ISC",
+  "description": "Exercice pour appliquer ce qui a été appris dans la théorie de la crétion d'une DB ainsi que ses TABLES avec l'ORM Sequelize",
+  "dependencies": {
+    "mysql2": "^3.12.0",
+    "nodemon": "^3.1.9",
+    "sequelize": "^6.37.5",
+    "sequelize-cli": "^6.6.2"
+  }
+}
