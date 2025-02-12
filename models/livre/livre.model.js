@@ -19,7 +19,7 @@ export default (sequelize) => {
    * @property {string} ISBN - Identifiant unique du livre (ISBN)
    * @property {string} titre - Titre du livre
    * @property {Objet[]} auteurs - Liste des auteurs du livre
-   * @property {Date} dateAchat - Date d'acquisition du livre
+   * @property {Date} date_achat - Date d'acquisition du livre
    * @property {Date} createdAt - Date de création de l'enregistrement
    * @property {Date} updatedAt - Date de dernière modification
    */
@@ -104,7 +104,7 @@ export default (sequelize) => {
      * Date d'acquisition du livre
      * @type {import('sequelize').ModelAttributeColumnOptions}
      */
-    dateAchat: {
+    date_achat: {
       type: DataTypes.DATE,
       allowNull: false,
       validate: {

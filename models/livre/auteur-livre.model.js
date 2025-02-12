@@ -16,8 +16,8 @@ export default (sequelize) => {
    * Classe représentant la relation entre un auteur et un livre
    * @class AuteurLivre
    * @extends Model
-   * @property {string} auteurId - ID de l'auteur
-   * @property {string} livreISBN - ISBN du livre
+   * @property {string} auteur_id - ID de l'auteur
+   * @property {string} livre_isbn - ISBN du livre
    * @property {string} role - Rôle de l'auteur sur le livre
    * @property {Date} createdAt - Date de création de l'enregistrement
    * @property {Date} updatedAt - Date de dernière modification
@@ -42,7 +42,7 @@ export default (sequelize) => {
      * Identifiant de l'auteur
      * @type {import('sequelize').ModelAttributeColumnOptions}
      */
-    auteurId: {
+    auteur_id: {
       type: DataTypes.UUID,
       allowNull: false,
       references: {
@@ -59,7 +59,7 @@ export default (sequelize) => {
      * ISBN du livre
      * @type {import('sequelize').ModelAttributeColumnOptions}
      */
-    livreISBN: {
+    livre_isbn: {
       type: DataTypes.STRING,
       allowNull: false,
       references: {
@@ -102,7 +102,7 @@ export default (sequelize) => {
     indexes: [
       {
         unique: true,
-        fields: ["auteurId", "livreISBN"],
+        fields: ["auteur_id", "livre_isbn"],
         name: "unique_auteur_livre",
       },
     ],

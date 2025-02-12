@@ -1,5 +1,5 @@
 /**
- * @fileoverview Modèle Sequelize représentant un client de la bibliothèque
+ * @fileoverview Modèle Sequelize représentant un client de la librairie
  * @module models/client
  * @requires sequelize
  */
@@ -13,7 +13,7 @@ import { Model, DataTypes } from "sequelize";
  */
 export default (sequelize) => {
   /**
-   * Classe représentant un client de la bibliothèque
+   * Classe représentant un client de la librairie
    * @class Client
    * @extends Model
    * @property {string} SSN - Numéro de sécurité sociale du client
@@ -21,7 +21,7 @@ export default (sequelize) => {
    * @property {string} prenom - Prénom du client
    * @property {string} rue - Nom de la rue de l'adresse
    * @property {string} numero - Numéro de rue
-   * @property {string} codePostal - Code postal
+   * @property {string} code_postal - Code postal
    * @property {string} ville - Nom de la ville
    * @property {Date} createdAt - Date de création de l'enregistrement
    * @property {Date} updatedAt - Date de dernière modification
@@ -127,7 +127,7 @@ export default (sequelize) => {
      * Code postal
      * @type {import('sequelize').ModelAttributeColumnOptions}
      */
-    codePostal: {
+    code_postal: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {

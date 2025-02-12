@@ -19,7 +19,7 @@ export default (sequelize) => {
    * @property {string} id - Identifiant unique de l'auteur
    * @property {string} nom - Nom de l'auteur
    * @property {string} prenom - Prénom de l'auteur
-   * @property {Date} dateNaissance - Date de naissance de l'auteur
+   * @property {Date} date_naissance - Date de naissance de l'auteur
    * @property {Date} createdAt - Date de création de l'enregistrement
    * @property {Date} updatedAt - Date de dernière modification
    */
@@ -93,7 +93,7 @@ export default (sequelize) => {
      * Date de naissance de l'auteur
      * @type {import('sequelize').ModelAttributeColumnOptions}
      */
-    dateNaissance: {
+    date_naissance: {
       type: DataTypes.DATE,
       allowNull: true,
       validate: {

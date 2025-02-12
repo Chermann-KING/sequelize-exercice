@@ -1,5 +1,5 @@
 /**
- * @fileoverview Modèle Sequelize représentant un emprunt de livre dans le système de bibliothèque
+ * @fileoverview Modèle Sequelize représentant un emprunt de livre dans le système d'une librairie'
  * @module models/emprunt
  * @requires sequelize
  */
@@ -13,12 +13,12 @@ import { Model, DataTypes } from "sequelize";
  */
 export default (sequelize) => {
   /**
-   * Classe représentant un emprunt dans la bibliothèque
+   * Classe représentant un emprunt dans une librairie
    * @class Emprunt
    * @extends Model
    * @property {number} numero - Identifiant unique de l'emprunt
-   * @property {Date} dateEmprunt - Date de l'emprunt
-   * @property {Date} dateRetour - Date de retour du livre (null si non retourné)
+   * @property {Date} date_emprunt - Date de l'emprunt
+   * @property {Date} date_retour - Date de retour du livre (null si non retourné)
    * @property {string} clientSSN - Référence vers le client (clé étrangère)
    * @property {string} livreISBN - Référence vers le livre (clé étrangère)
    * @property {Date} createdAt - Date de création de l'enregistrement
@@ -76,7 +76,7 @@ export default (sequelize) => {
      * Date de l'emprunt
      * @type {import('sequelize').ModelAttributeColumnOptions}
      */
-    dateEmprunt: {
+    date_emprunt: {
       type: DataTypes.DATE,
       allowNull: false,
       validate: {
@@ -89,7 +89,7 @@ export default (sequelize) => {
      * Date de retour du livre
      * @type {import('sequelize').ModelAttributeColumnOptions}
      */
-    dateRetour: {
+    date_retour: {
       type: DataTypes.DATE,
       allowNull: true,
       validate: {
@@ -99,7 +99,7 @@ export default (sequelize) => {
          * @param {Date} value - La date de retour à valider
          */
         isAfterEmprunt(value) {
-          if (value && value < this.dateEmprunt) {
+          if (value && value < this.date_emprunt) {
             throw new Error(
               "La date de retour doit être postérieure à la date d'emprunt"
             );
